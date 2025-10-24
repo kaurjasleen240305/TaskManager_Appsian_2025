@@ -87,10 +87,10 @@ const Index = () => {
     }
   };
 
-  const handleToggleTask = async (id: string) => {
+  const handleToggleTask = async (task_in: any) => {
     try {
-      const updatedTask = await taskService.toggleTask(id);
-      setTasks(tasks.map(task => task.id === id ? updatedTask : task));
+      const updatedTask = await taskService.updateTask(task_in.id,{"description":task_in.description, "isCompleted":!task_in.isCompleted});
+      setTasks(tasks.map(task => task.id === task_in.id ? updatedTask : task));
       toast({
         description: updatedTask.isCompleted ? "Task completed! 🎉" : "Task reopened",
       });
@@ -181,7 +181,9 @@ const Index = () => {
                 <TaskItem
                   key={task.id}
                   task={task}
-                  onToggle={handleToggleTask}
+                  onToggle={()=>{
+                    handleToggleTask(task)
+                  }}
                   onDelete={handleDeleteTask}
                 />
               ))}
@@ -189,12 +191,6 @@ const Index = () => {
           )}
         </div>
 
-        <footer className="mt-12 text-center text-sm text-muted-foreground">
-          <p>
-            💡 <strong>Backend Setup:</strong> Update <code className="px-2 py-1 bg-muted rounded">API_BASE_URL</code> in{' '}
-            <code className="px-2 py-1 bg-muted rounded">src/services/taskService.ts</code> to connect to your .NET API
-          </p>
-        </footer>
       </div>
     </div>
   );
