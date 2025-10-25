@@ -5,11 +5,13 @@ This project was developed as part of the **Appsian Logical Assignment** for eff
 
 ---
 
-## 🌐 Live Deployment
+## **Bonus Section - **
 
-Deployed on **Vercel**  
+👉 **[View Live App deployed on VERCEL](https://task-manager-appsian-2025.vercel.app/)** 
 
-👉 **[View Live App](https://task-manager-appsian-2025.vercel.app/)**
+Implemented task filtering based on their status completed/pending/all.
+
+Designed using Tailwind,Bootstrap and custom css.
 
 ---
 
