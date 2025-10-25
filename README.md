@@ -26,6 +26,14 @@ You can install them easily using [nvm (Node Version Manager)](https://github.co
 
 ---
 
+### 📸 Screenshots
+
+![All tasks tab](./assets/all.png)
+![Active tasks tab](./assets/active.png)
+![Completed tasks tab](./assets/completed.png)
+
+---
+
 ### ⚙️ Setup Instructions
 
 ```bash
